@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Meet'Zic</title>
     <link rel="stylesheet" href="/public/css/index.css">
 </head>
-
 <body>
     <% if (!user) { %>
         <div id="form-container">
@@ -44,12 +42,10 @@
             </form>
         </div>
         <p id="toggle-form-link">Pas encore inscrit ? S'inscrire</p>
-        <% } else { %>
-            <h1>Bienvenue <%= user.username %>
-            </h1>
-            <p>Votre profil : <%= user.profile %>
-            </p>
-            <% } %>
-</body>
+    <% } else { %>
+        <h1>Bienvenue <%= user.username %></h1>
+        <p>Votre profil : <%= user.profile %></p>
+    <% } %>
     <script src="/public/index.js"></script>
+</body>
 </html>
