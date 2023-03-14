@@ -1,13 +1,18 @@
-import express from express;
+import express from 'express';
+import ejs from 'ejs';
+import path from 'path';
 
 const app = express();
 
 const PORT = 4000;
 
+app.set('view engine', 'ejs');
+
 app.listen(PORT, () => {
     console.log('Le server a bien démarré sur le port:' + PORT);
 })
 
-app.get('/', (req,res) => {
-    res.send('Bienvenue sur Meet \'Zic');
-})
+app.get('/', (req, res) => {
+    const user = null; // Remplacez par vos données utilisateur
+    res.render('index', { user });
+  });

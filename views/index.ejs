@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meet'Zic</title>
+</head>
+
+<body>
+    <% if (!user) { %>
+        <div id="form-container">
+            <h1>Inscription</h1>
+            <form action="/register" method="post" id="signup-form" style="display:none;">
+                <label>
+                    Nom complet:
+                    <input type="text" name="fullName" required>
+                </label><br>
+                <label>
+                    Adresse e-mail:
+                    <input type="email" name="email" required>
+                </label><br>
+                <label>
+                    Mot de passe:
+                    <input type="password" name="password" required>
+                </label><br>
+                <label>
+                    Confirmation du mot de passe:
+                    <input type="password" name="passwordConfirm" required>
+                </label><br>
+                <button type="submit">S'inscrire</button>
+            </form>
+
+            <h1>Connexion</h1>
+            <form id="login-form" action="/login" method="post">
+                <label>
+                    Adresse e-mail:
+                    <input type="email" name="email" required>
+                </label><br>
+                <label>
+                    Mot de passe:
+                    <input type="password" name="password" required>
+                </label><br>
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+        <p id="toggle-form-link">Pas encore inscrit ? S'inscrire</p>
+        <% } else { %>
+            <h1>Bienvenue <%= user.username %>
+            </h1>
+            <p>Votre profil : <%= user.profile %>
+            </p>
+            <% } %>
+</body>
+
+</html>
